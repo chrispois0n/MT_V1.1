@@ -1,0 +1,4 @@
+C:\Users\Christopher\Desktop\Estancia - Mr. Tamal\MT_V1.1\miLibreria\bin\Debug\miLibreria.dll
+C:\Users\Christopher\Desktop\Estancia - Mr. Tamal\MT_V1.1\miLibreria\bin\Debug\miLibreria.pdb
+C:\Users\Christopher\Desktop\Estancia - Mr. Tamal\MT_V1.1\miLibreria\obj\Debug\miLibreria.dll
+C:\Users\Christopher\Desktop\Estancia - Mr. Tamal\MT_V1.1\miLibreria\obj\Debug\miLibreria.pdb
