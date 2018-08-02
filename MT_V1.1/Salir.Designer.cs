@@ -80,6 +80,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Salir";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Salir";
             this.ResumeLayout(false);
             this.PerformLayout();

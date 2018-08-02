@@ -13,6 +13,9 @@ namespace MT_V1._1
 {
     public partial class DineroCaja : Form
     {
+        public static decimal DI;
+        public static int id;
+        public static string FHII;
         public DineroCaja()
         {
             InitializeComponent();
@@ -20,6 +23,9 @@ namespace MT_V1._1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            DI = Convert.ToDecimal(txtDI.Text);
+            id = Convert.ToInt32(lblId.Text);           
+            
             PV abrir = new _1.PV();
             abrir.Show();
             //PROBABLEMENTE UN DELAY
@@ -37,8 +43,9 @@ namespace MT_V1._1
             lblNombre.Text = ds.Tables[0].Rows[0]["nombre"].ToString().Trim();
             lblId.Text = ds.Tables[0].Rows[0]["id_usuario"].ToString().Trim();
 
-            string ITurno = DateTime.Now.ToString(@"dd\/MM\/yyyy h\:mm:ss tt");
-            lblInicioTurno.Text = ITurno;
+            string FHI = DateTime.Now.ToString(@"dd\/MM\/yyyy h\:mm:ss tt");
+            FHII = FHI;
+            lblInicioTurno.Text = FHI;
         }
     }
 }

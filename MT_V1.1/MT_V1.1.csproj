@@ -71,6 +71,12 @@
     <Compile Include="CobrarPedido.Designer.cs">
       <DependentUpon>CobrarPedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="consultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="consultas.Designer.cs">
+      <DependentUpon>consultas.cs</DependentUpon>
+    </Compile>
     <Compile Include="DineroCaja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CobrarPedido.resx">
       <DependentUpon>CobrarPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="consultas.resx">
+      <DependentUpon>consultas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DineroCaja.resx">
       <DependentUpon>DineroCaja.cs</DependentUpon>
@@ -200,6 +209,69 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="IMG\circular-clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\exchange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\AsadoRojo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\Rajas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\AsadoVerde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\Pina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\Fresas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\Zarzamora.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\SalsaVerde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\Chicharron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\Cajeta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\Rompope.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\Capuchino.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\Chocorrol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\champurrado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\Refresco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\airport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\check-in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\check-in %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\airport %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\folder.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

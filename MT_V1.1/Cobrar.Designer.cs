@@ -50,9 +50,9 @@
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Location = new System.Drawing.Point(174, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 24);
+            this.label1.Size = new System.Drawing.Size(151, 24);
             this.label1.TabIndex = 1;
-            this.label1.Text = "TOTAL A COBRAR";
+            this.label1.Text = "Total a cobrar";
             // 
             // label2
             // 

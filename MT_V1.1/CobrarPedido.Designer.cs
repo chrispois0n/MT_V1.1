@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,11 +60,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +75,60 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(273, 507);
             this.panel1.TabIndex = 0;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label20.Location = new System.Drawing.Point(125, 278);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(22, 24);
+            this.label20.TabIndex = 17;
+            this.label20.Text = "0";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(30, 34);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 57);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Cobrar e imprimir ticket";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label21.Location = new System.Drawing.Point(78, 235);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(109, 24);
+            this.label21.TabIndex = 16;
+            this.label21.Text = "Articulos:";
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(30, 101);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(200, 57);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Cobrar solo registrando la venta ";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Red;
+            this.button3.Location = new System.Drawing.Point(30, 164);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(200, 57);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "Cancelar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label3
             // 
@@ -291,9 +345,9 @@
             this.label14.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label14.Location = new System.Drawing.Point(516, 40);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(199, 24);
+            this.label14.Size = new System.Drawing.Size(151, 24);
             this.label14.TabIndex = 23;
-            this.label14.Text = "TOTAL A COBRAR";
+            this.label14.Text = "Total a cobrar";
             // 
             // label15
             // 
@@ -374,60 +428,6 @@
             this.textBox7.TabIndex = 28;
             this.textBox7.Text = "$00.00";
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label20.Location = new System.Drawing.Point(125, 278);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(22, 24);
-            this.label20.TabIndex = 17;
-            this.label20.Text = "0";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(30, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 57);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Cobrar e imprimir ticket";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label21.Location = new System.Drawing.Point(78, 235);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(109, 24);
-            this.label21.TabIndex = 16;
-            this.label21.Text = "Articulos:";
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(30, 101);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 57);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Cobrar solo registrando la venta ";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Red;
-            this.button3.Location = new System.Drawing.Point(30, 164);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 57);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Cancelar";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // CobrarPedido
             // 

@@ -57,9 +57,9 @@
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(11, 10);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(188, 22);
+            this.label12.Size = new System.Drawing.Size(151, 22);
             this.label12.TabIndex = 3;
-            this.label12.Text = "ARTICULO COMUN";
+            this.label12.Text = "Articulo Comun";
             // 
             // label1
             // 
@@ -68,9 +68,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 17);
+            this.label1.Size = new System.Drawing.Size(66, 17);
             this.label1.TabIndex = 4;
-            this.label1.Text = "NOMBRE";
+            this.label1.Text = "Nombre";
             // 
             // textBox1
             // 
@@ -103,9 +103,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(236, 126);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 17);
+            this.label3.Size = new System.Drawing.Size(56, 17);
             this.label3.TabIndex = 8;
-            this.label3.Text = "PRECIO";
+            this.label3.Text = "Precio";
             // 
             // label2
             // 
@@ -114,9 +114,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(12, 126);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 17);
+            this.label2.Size = new System.Drawing.Size(73, 17);
             this.label2.TabIndex = 10;
-            this.label2.Text = "CANTIDAD";
+            this.label2.Text = "Cantidad";
             // 
             // button3
             // 
@@ -138,7 +138,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(145, 43);
             this.button1.TabIndex = 12;
-            this.button1.Text = "AGREGAR";
+            this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // ArtCom

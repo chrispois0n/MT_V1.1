@@ -30,7 +30,7 @@ namespace MT_V1._1
         {
 
             try {
-                string CMD = string.Format("select * from usuarios where account = '" + txtU.Text + "' and password = '" + txtP.Text + "' ");
+                string CMD = string.Format("select * from usuarios where account = '" + txtU.Text + "' and psw = '" + txtP.Text + "' ");
                 //EL .TRIM() SIRVE PARA EVITAR ESPACIOS
 
                 DataSet ds = Utilidades.Ejecutar(CMD);
@@ -38,7 +38,7 @@ namespace MT_V1._1
                 codigo = ds.Tables[0].Rows[0]["id_usuario"].ToString().Trim();
 
                 string cuenta = ds.Tables[0].Rows[0]["account"].ToString().Trim();
-                string password = ds.Tables[0].Rows[0]["password"].ToString().Trim();
+                string password = ds.Tables[0].Rows[0]["psw"].ToString().Trim();
 
                 if (cuenta == txtU.Text.Trim() && password== txtP.Text.Trim())
                 {
@@ -53,7 +53,7 @@ namespace MT_V1._1
                     //esta condicional la usare mas tarde para brindar accesos al usuario ingresado
 
 
-                    MessageBox.Show("Sesion iniciada");
+                    //MessageBox.Show("Sesion iniciada");
                     DineroCaja abrir = new DineroCaja();
                     abrir.Show();
                     this.Hide();
