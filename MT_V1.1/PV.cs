@@ -17,12 +17,6 @@ namespace MT_V1._1
     {
         int bdU = 0; // Bandera para update 
         string busquedaUsuario = "";
-        int tipoVenta = 1;
-        decimal totalPLL = 0;
-        public static int cont_fila = 0;
-
-
-
         public PV()
         {
             InitializeComponent();
@@ -40,12 +34,10 @@ namespace MT_V1._1
             panelInventarios.Hide();
             panelProductos.Hide();
             panelVentas.Show();
-            panelPLL.Show();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            tipoVenta = 1;
             panelReportes.Hide();
             panelPed.Hide();
             panelME.Hide();
@@ -56,7 +48,6 @@ namespace MT_V1._1
 
         private void button8_Click(object sender, EventArgs e)
         {
-            tipoVenta = 2;
             panelReportes.Hide();
             panelPed.Hide();
             panelPLL.Hide();
@@ -79,7 +70,6 @@ namespace MT_V1._1
 
         private void button9_Click(object sender, EventArgs e)
         {
-            tipoVenta = 3;
             panelReportes.Hide();
             panelPed.Show();
             panelPLL.Hide();
@@ -146,14 +136,13 @@ namespace MT_V1._1
 
             if (LogIn.permisos == true)
             {
-                btnProductos.Enabled = true;
+                
                 btnInventarios.Enabled = true;
+                btnProductos.Enabled = true;
                 btnReportes.Enabled = true;
-
-
             }else
             {
-               
+
             }
         }
 
@@ -256,6 +245,7 @@ namespace MT_V1._1
         
         }
 
+        public static int cont_fila = 0;
 
         private void button10_Click(object sender, EventArgs e)
         {
@@ -594,231 +584,6 @@ namespace MT_V1._1
             txtBuscar.ResetText();
             groupBox1.Enabled = false;
             DGVUsuarios.DataSource = llenadoDGV("usuarios").Tables[0];
-        }
-
-#region BOTONES VENTAS
-        private void btnAsadoRojo_Click(object sender, EventArgs e)
-        {
-            string descripcion;
-            int stock =0 , id_producto, cantidad =0;
-            decimal precio, importe = 0;
-
-            string cmd = string.Format("Select * from productos where id_producto  ='{0}'", 1);
-            DataSet ds = Utilidades.Ejecutar(cmd);
-
-            id_producto = Convert.ToInt32(ds.Tables[0].Rows[0]["id_producto"].ToString().Trim());
-            descripcion = ds.Tables[0].Rows[0]["descripcion"].ToString().Trim();
-            stock = Convert.ToInt32(ds.Tables[0].Rows[0]["stock"].ToString().Trim());
-            precio = Convert.ToDecimal(ds.Tables[0].Rows[0]["precio"].ToString().Trim());
-
-            if (tipoVenta == 1)
-            {
-
-                if (stock > 0)
-                {
-                    stock = stock - 1;
-                    cantidad = cantidad + 1;
-                    importe = cantidad * precio;
-
-                    DGV_V_L.Rows.Add(descripcion, stock, cantidad, precio, importe);
-                    total(totalPLL);
-                }
-                else
-                {
-                    MessageBox.Show("Producto insuficiente");
-                }
-            } else if (tipoVenta == 2)
-            {
-                stock = stock - 1;
-                cantidad = cantidad + 1;
-                importe = cantidad * precio;
-
-                DGV_V_L.Rows.Add(descripcion, stock, cantidad, precio, importe);
-            }
-            else if (tipoVenta == 3){
-                stock = stock - 1;
-                cantidad = cantidad + 1;
-                importe = cantidad * precio;
-
-                DGV_V_L.Rows.Add(descripcion, stock, cantidad, precio, importe);
-            }
-        }
-
-        public Decimal total(decimal t)
-        {
-            int contador = DGV_V_L.Rows.Count;
-            
-            for (int i = 0; i < contador ; i++)
-            {
-                try
-                {
-                    totalPLL += Convert.ToDecimal(DGV_V_L.Rows[i].Cells[4].Value.ToString());
-                }
-                catch (Exception)
-                {
-                    totalPLL += 0;
-                    MessageBox.Show("Nada se cor");
-                }
-            }
-            lblTotal.Text = Convert.ToString("$" + totalPLL);
-            return (totalPLL);
-        }
-        
-        public void consultaVentas(int id_p)
-        {
-
-
-        }
-
-        private void btnRajas_Click(object sender, EventArgs e)
-        {
-            bool existe = false;
-            int num_fila = 0;
-
-            string descripcion;
-            int stock = 0, id_producto, cantidad = 0;
-            decimal precio, importe = 0;
-
-            string cmd = string.Format("Select * from productos where id_producto  ='{0}'", 2);
-            DataSet ds = Utilidades.Ejecutar(cmd);
-
-            id_producto = Convert.ToInt32(ds.Tables[0].Rows[0]["id_producto"].ToString().Trim());
-            descripcion = ds.Tables[0].Rows[0]["descripcion"].ToString().Trim();
-            stock = Convert.ToInt32(ds.Tables[0].Rows[0]["stock"].ToString().Trim());
-            precio = Convert.ToDecimal(ds.Tables[0].Rows[0]["precio"].ToString().Trim());
-
-            if (cont_fila == 0)
-            {
-                stock = stock - 1;
-                cantidad = cantidad + 1;
-                importe = cantidad * precio; 
-                DGV_V_L.Rows.Add(descripcion, stock, cantidad, precio, importe);
-
-                cont_fila++;
-            }
-            else
-            {
-                foreach(DataGridViewRow fila in DGV_V_L.Rows)
-                {
-                    if(fila.Cells[0].Value.ToString() == descripcion)
-                    {
-                        existe = true;
-                        num_fila = fila.Index;
-                    }
-                }
-                if (existe == true)
-                {
-                    stock = stock - 1;
-                    cantidad = cantidad + 1;
-                    importe = cantidad * precio;
-                    DGV_V_L.Rows[num_fila].Cells[2].Value = (Convert.ToDouble(DGV_V_L.Rows[num_fila].Cells[2].Value) + 1).ToString();
-                    DGV_V_L.Rows[num_fila].Cells[1].Value = (Convert.ToInt32(DGV_V_L.Rows[num_fila].Cells[1].Value) - 1);
-                    //int c = Convert.ToInt32(DGV_V_L.Rows[num_fila].Cells[2].ToString().Trim());
-                   // decimal p = Convert.ToDecimal(DGV_V_L.Rows[num_fila].Cells[3].ToString().Trim());
-                    DGV_V_L.Rows[num_fila].Cells[4].Value = (Convert.ToInt32(DGV_V_L.Rows[num_fila].Cells[2].Value) * Convert.ToDecimal(DGV_V_L.Rows[num_fila].Cells[3].Value));
-                }
-                else
-                {
-                    stock = stock - 1;
-                    cantidad = cantidad + 1;
-                    importe = cantidad * precio;
-                    DGV_V_L.Rows.Add(descripcion, stock, cantidad, precio, importe);
-
-                    cont_fila++; 
-                }
-            }
-        }
-
-        private void btnSalsaVerde_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnChicharron_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAsadoVerde_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnPina_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnFresa_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCajeta_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnZarzamora_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnRompope_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCapuchino_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnChocorrol_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnChampurrado_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnRefresco_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        #endregion
-
-        private void btnProductos_Click(object sender, EventArgs e)
-        {
-            panelReportes.Hide();
-            panelInventarios.Hide();
-            panelProductos.Show();
-            panelVentas.Hide();
-        }
-
-        private void btnInventarios_Click(object sender, EventArgs e)
-        {
-            panelReportes.Hide();
-            panelInventarios.Show();
-            panelProductos.Hide();
-            panelVentas.Hide();
-            DGV_I_I.DataSource = llenadoDGV("productos").Tables[0];
-
-        }
-
-        private void btnReportes_Click_1(object sender, EventArgs e)
-        {
-            panelReportes.Show();
-            panelInventarios.Hide();
-            panelProductos.Hide();
-            panelVentas.Hide();
-            DGVSesiones.DataSource = llenadoDGV("sesiones").Tables[0];
-            panelSesiones.Show();
-
-
         }
     }
 }

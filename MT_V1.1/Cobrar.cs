@@ -26,12 +26,5 @@ namespace MT_V1._1
         {
 
         }
-
-        private void Cobrar_Load(object sender, EventArgs e)
-        {
-            PV pv = new PV();
-            pv.total(9);
-            
-        }
     }
 }
